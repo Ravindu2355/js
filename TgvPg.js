@@ -1,4 +1,4 @@
-ch="1387186514";
+ch="-1002316025710";
 function addTask(url, chat_id,type, thumbnail_url = null) {
     const data = {
         url: url,
@@ -83,4 +83,4 @@ document.querySelectorAll('a').forEach(anchor => {
 
     document.body.appendChild(el);
 }
-init()
+//init()
