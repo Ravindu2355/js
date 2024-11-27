@@ -3,14 +3,14 @@ taskar=[];
 mode=0;
 function addTask(url, chat_id,type, thumbnail_url = null) {
     if (mode==1){
-        data = {
+    data = {
         url: url,
         chat_id: chat_id,
         type:type,
         thumbnail_url:null
        };
         taskar.push(data);
-        alert(`add succsess ${taskar.length} now`)
+        alert(`list add succsess url: ${JSON.stringify(data)} ${taskar.length} now`)
     }else{
     const data = {
         url: url,
