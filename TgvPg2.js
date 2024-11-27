@@ -88,6 +88,15 @@ function init() {
     top: 10px;
     left: 10px;
     z-index: 999999;
+}.rxcont2{
+    background: black;
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 50%;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999999;
 }`;
     document.head.appendChild(sl);
     el=document.createElement('div');
@@ -106,7 +115,7 @@ function init() {
   });  
 
     el2=document.createElement('div');
-    el2.className = "rxcont";
+    el2.className = "rxcont2";
     el2.textContent="📃";
     el2.addEventListener('dblclick', async (event) => {
       // event.preventDefault();
