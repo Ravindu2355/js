@@ -149,5 +149,6 @@ function init() {
 });
 
     document.body.appendChild(el);
+    document.body.appendChild(el2);
 }
 //init()
