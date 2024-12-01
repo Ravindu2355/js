@@ -2,16 +2,7 @@ ch="-1002316025710";
 taskar=[];
 mode=0;
 function addTask(url, chat_id,type, thumbnail_url = null) {
-    if (mode==1){
-    data = {
-        url: url,
-        chat_id: chat_id,
-        type:type,
-        thumbnail_url:null
-       };
-        taskar.push(data);
-        alert(`list add succsess url: ${JSON.stringify(data)} ${taskar.length} now`)
-    }else{
+    if (mode==0){
     const data = {
         url: url,
         chat_id: chat_id,
@@ -37,6 +28,17 @@ function addTask(url, chat_id,type, thumbnail_url = null) {
     .catch((error) => {
         console.error('Error:', error);
     });
+    }else{
+        data = {
+        url: url,
+        chat_id: chat_id,
+        type:type,
+        thumbnail_url:null
+       };
+        taskar.push(data);
+        if(mode==1){
+        alert(`list add succsess url: ${JSON.stringify(data)} ${taskar.length} now`)
+        }
     }
 }
 
@@ -73,14 +75,26 @@ function sendTasks() {
         console.error('Error:', error);
     });
 }
+function get_host(url){
+    return url.replace(/^((\w+:)?\/\/[^\/]+\/?).*$/,'$1');
+}
 
 function exall(){
+  hon=get_host(location.href);
   tx = await porompt("Give me the links same part for extract!");
   if (tx!="" && tx!=null){
     alert(`extracting! ${tx} holding links!`);
     document.querySelectorAll('a').forEach(tty =>{
       link=tty.href;
       if(link.includes(tx)==true){
+          if(link.includes("http")==false){
+              if(link.startsWith("/"){
+                  link=link.replace("/","");
+                  link=hon+link;
+              }else{
+                  link=hon+link;
+              }
+          }
           taskar.push(link);
       }
     })
@@ -90,11 +104,9 @@ function exall(){
     
 
 
-
 function init() {
-    baseU=document.href;
-    spu=baseU.split('/');
-    spu.
+    baseU=location.href;
+    hon= get_host(baseU);
     sl=document.createElement("style");
     sl.innerHTML=`.rxcont{
     background: black;
@@ -169,9 +181,12 @@ function init() {
     if (x==true) {
         hr=anchor.href;
         if(hr.includes("http")==false){
-            hr
+            if(hr.startsWith("/")==true){
+                hr=hr.replace("/","");
+            }
+            hr=hon+hr;
         }
-        await addTask(anchor.href,ch,"desi_page")
+        await addTask(hr,ch,"desi_page")
     }
     // Custom action for double-click
     //alert(`Double-clicked on: ${anchor.href}`);
