@@ -79,7 +79,7 @@ function get_host(url){
     return url.replace(/^((\w+:)?\/\/[^\/]+\/?).*$/,'$1');
 }
 
-function exall(){
+async function exall(){
   hon=get_host(location.href);
   tx = await porompt("Give me the links same part for extract!");
   if (tx!="" && tx!=null){
@@ -104,7 +104,7 @@ function exall(){
     
 
 
-function init() {
+async function init() {
     baseU=location.href;
     hon= get_host(baseU);
     sl=document.createElement("style");
