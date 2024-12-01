@@ -88,7 +88,7 @@ async function exall(){
       link=tty.href;
       if(link.includes(tx)==true){
           if(link.includes("http")==false){
-              if(link.startsWith("/"){
+              if(link.startsWith("/")==true){
                   link=link.replace("/","");
                   link=hon+link;
               }else{
