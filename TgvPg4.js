@@ -74,6 +74,17 @@ function sendTasks() {
     });
 }
 
+function exall(){
+  tx = await porompt("Give me the links same part for extract!");
+  alert(`extracting! ${tx} holding links!`);
+  document.querySelectorAll('a').forEach(tty =>{
+      link=tty.href;
+      if(link.includes(tx)==true){
+          taskar.push(link);
+      }
+  })
+  alert(`${taskar.length} of links founded sending!`);
+}
 
 
 
@@ -106,10 +117,14 @@ function init() {
       // event.preventDefault();
        if (mode==0){
            mode=1;
-           alert("mode 1");
-       }else{
+           alert("mode 1- select and add multitasks and send them via paper");
+       }else if(mode==1){
+           mode=2;
+           alert("mode 2- bulk ex extract duble click paper for extract links from this page and upload them!");
+       }else if(mode == 2){
            mode=0;
-           alert("mode 0");
+           alert("mode 0- selected one will be upladed")
+           
        }
     //console.log("Single click prevented on:", anchor);
   });  
@@ -119,7 +134,12 @@ function init() {
     el2.textContent="📃";
     el2.addEventListener('dblclick', async (event) => {
       // event.preventDefault();
-      await sendTasks()
+      if(mode == 2){
+        li=await exall();
+        await sendTasks();
+      }else{
+        await sendTasks();
+      }
     //console.log("Single click prevented on:", anchor);
   });  
 
