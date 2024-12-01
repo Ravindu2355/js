@@ -76,19 +76,25 @@ function sendTasks() {
 
 function exall(){
   tx = await porompt("Give me the links same part for extract!");
-  alert(`extracting! ${tx} holding links!`);
-  document.querySelectorAll('a').forEach(tty =>{
+  if (tx!="" && tx!=null){
+    alert(`extracting! ${tx} holding links!`);
+    document.querySelectorAll('a').forEach(tty =>{
       link=tty.href;
       if(link.includes(tx)==true){
           taskar.push(link);
       }
-  })
-  alert(`${taskar.length} of links founded sending!`);
+    })
+    alert(`${taskar.length} of links founded sending!`);
+  }
 }
+    
 
 
 
 function init() {
+    baseU=document.href;
+    spu=baseU.split('/');
+    spu.
     sl=document.createElement("style");
     sl.innerHTML=`.rxcont{
     background: black;
@@ -161,6 +167,10 @@ function init() {
     x=await asp(`doinfor: ${anchor.href}`)
     console.log(x);
     if (x==true) {
+        hr=anchor.href;
+        if(hr.includes("http")==false){
+            hr
+        }
         await addTask(anchor.href,ch,"desi_page")
     }
     // Custom action for double-click
