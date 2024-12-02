@@ -82,7 +82,7 @@ function get_host(url){
 async function exall(){
   console.log("running exall");
   hon=get_host(location.href);
-  tx = await porompt("Give me the links same part for extract!");
+  tx = await prompt("Give me the links same part for extract!");
   if (tx!="" && tx!=null){
     alert(`extracting! ${tx} holding links!`);
     document.querySelectorAll('a').forEach(tty =>{
@@ -99,6 +99,7 @@ async function exall(){
           taskar.push(link);
       }
     })
+    console.log(`${taskar.length} of links founded sending!`);
     alert(`${taskar.length} of links founded sending!`);
   }
 }
@@ -156,6 +157,7 @@ async function init() {
       if(mode == 2){
           console.log("fetching all links");
         li=await exall();
+          console.log("starting send");
         await sendTasks();
       }else{
         await sendTasks();
