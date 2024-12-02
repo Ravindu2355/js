@@ -80,6 +80,7 @@ function get_host(url){
 }
 
 async function exall(){
+  console.log("running exall");
   hon=get_host(location.href);
   tx = await porompt("Give me the links same part for extract!");
   if (tx!="" && tx!=null){
@@ -153,6 +154,7 @@ async function init() {
     el2.addEventListener('dblclick', async (event) => {
       // event.preventDefault();
       if(mode == 2){
+          console.log("fetching all links");
         li=await exall();
         await sendTasks();
       }else{
