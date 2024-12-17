@@ -233,7 +233,8 @@
     <p>&copy; 2024 ProSite. All rights reserved.</p>
   </footer>
 
-  <script>
+  <script onload="inn()">
+function inn(){
     const exploreBtn = document.getElementById("exploreBtn");
     const exploreBtn2 = document.getElementById("exploreBtn2");
     const overlay = document.getElementById("overlay");
@@ -272,4 +273,5 @@
       player.pause();
       player.src = "";
     });
+}
   </script>
