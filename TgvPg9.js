@@ -96,7 +96,13 @@ async function exall(){
                   link=hon+link;
               }
           }
-          taskar.push(link);
+          data = {
+        url: link,
+        chat_id: ch,
+        type:"desi_page",
+        thumbnail_url:null
+          };
+          taskar.push(data);
       }
     })
     console.log(`${taskar.length} of links founded sending!`);
