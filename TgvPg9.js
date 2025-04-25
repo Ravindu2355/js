@@ -76,7 +76,9 @@ function sendTasks() {
     });
 }
 function get_host(url){
-    return url.replace(/^((\w+:)?\/\/[^\/]+\/?).*$/,'$1');
+    // url.replace(/^((\w+:)?\/\/[^\/]+\/?).*$/,'$1');
+    const baseURL = window.location.origin;
+    return baseURL;
 }
 
 async function exall(){
@@ -102,7 +104,9 @@ async function exall(){
         type:"desi_page",
         thumbnail_url:null
           };
-          taskar.push(data);
+          if(taskar.indexOf(data)==-1){
+            taskar.push(data);
+          }
       }
     })
     console.log(`${taskar.length} of links founded sending!`);
