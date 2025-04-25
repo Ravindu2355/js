@@ -86,7 +86,7 @@ async function exall(){
   hon=get_host(location.href);
   tx = await prompt("Give me the links same part for extract!");
   if (tx!="" && tx!=null){
-    alert(`extracting! ${tx} holding links!`);
+    alert(`extracting! ${tx} holding links!,host ${hon}`);
     document.querySelectorAll('a').forEach(tty =>{
       link=tty.href;
       if(link.includes(tx)==true){
