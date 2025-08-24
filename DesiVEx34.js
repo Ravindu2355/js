@@ -81,9 +81,9 @@ function init(){
     
     fetch(endpoint, {
       method: 'POST',
-      headers: {
+      /*headers: {
         'Content-Type': 'application/json'
-      },
+      },*/
       body: JSON.stringify({ url: url })
     })
     .then(response => response.json())
