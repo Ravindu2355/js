@@ -77,7 +77,7 @@ function init(){
     });
     
     // Your Google Apps Script endpoint
-    const endpoint ='https://script.google.com/macros/s/AKfycbyNtHfoW0iUuDP26lpJrmbbUBSZAhIG-uhZurZZPZQv1lHKOA4Lwwy5rbsIWY-Ug21bZw/exec';
+    const endpoint = 'https://script.google.com/macros/s/AKfycbwq0ix26hILtUpPqx3jd2glvCcG1Qb8-RVvLVB-9N--jzOou7GYuItkBzfbL212Y9oWsw/exec';
     
     fetch(endpoint, {
       method: 'POST',
