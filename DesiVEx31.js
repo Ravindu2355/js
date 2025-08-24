@@ -1,4 +1,4 @@
-(function(){
+function init(){
   // Load SweetAlert2
   if (typeof Swal === 'undefined') {
     const link = document.createElement('link');
@@ -411,4 +411,4 @@
       Swal.fire('Deactivated', 'Video extractor has been deactivated', 'info');
     });
   }
-})();
+}
