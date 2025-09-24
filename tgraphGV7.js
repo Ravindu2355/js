@@ -28,11 +28,14 @@
         nodeElement.tag = domNode.tagName.toLowerCase();
         for (let i = 0; i < domNode.attributes.length; i++) {
             let attr = domNode.attributes[i];
-            if (attr.name === 'href' || attr.name === 'src') {
+            if (attr.name === 'href' || attr.name === 'src' || attr.name === 'data-src') {
                 if (!nodeElement.attrs) {
                     nodeElement.attrs = {};
                 }
                 nodeElement.attrs[attr.name] = attr.value;
+                if (attr.name.includes('src') == true){
+                    nodeElement.attrs[attr.name] = "https://coresproxy.io/?url="+attr.value;
+                }
             }
         }
         if (domNode.childNodes.length > 0) {
