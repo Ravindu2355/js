@@ -34,7 +34,7 @@
                 }
                 nodeElement.attrs[attr.name] = attr.value;
                 if (attr.name.includes('src') == true){
-                    nodeElement.attrs[attr.name] = "https://coresproxy.io/?url="+attr.value;
+                    nodeElement.attrs[attr.name] = attr.value;
                 }
             }
         }
