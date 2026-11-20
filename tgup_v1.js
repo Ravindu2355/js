@@ -1,6 +1,6 @@
 var api="https://middle-kaitlyn-rtys-1f163ec4.koyeb.app/u/";
 var pr=api+"progress";
-var chat="-1002356041448";
+var chat="-1004461865587"; //"-1002356041448";
 sended=[];
 
 async function upload(ar) {
